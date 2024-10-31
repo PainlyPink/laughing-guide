@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Hello World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>by tg</title>
 </head>
 
-<body>
-    <h1>Honda Bonda</h1>
+<body bgcolor="aquamarine" style="font-size: xx-large; color: darkslateblue;">
+    Who is Hanshika?
+    <form>
+        <label>
+            <input type="radio" name="option" value="girl" />
+            girl
+        </label>
+        <label>
+            <input type="radio" name="option" value="bonda" />
+            bonda
+        </label>
+        <label>
+            <input type="radio" name="option" value="monkey" />
+            monkey
+        </label>
+        <label>
+            <input type="radio" name="option" value="baby" />
+            baby
+        </label>
+    </form>
+    <p id="selected-option">Please select an option</p>
+
+    <script>
+        const form = document.querySelector('form');
+        const selectedOption = document.getElementById('selected-option');
+
+        form.addEventListener('change', (event) => {
+            if (event.target.name === 'option') {
+                let selected = event.target.value;
+                let showContent = ""
+                if (selected === 'girl') {
+                    showContent = "Incorrect! Please try again!"
+                }
+                else if (selected === 'bonda') {
+                    showContent = "🎉"
+                }
+                else if (selected === 'monkey') {
+                    showContent = "🙈🐵🎊"
+                }
+                else if (selected === 'baby') {
+                    showContent = "👶🎈"
+                }
+                selectedOption.textContent = showContent;
+            }
+        });
+    </script>
+
+    <footer style="font-style: italic; text-align: center; position: fixed; bottom: 0; width: 100%; font-size: large;">
+        <p>by tg</p>
+    </footer>
 </body>
 
 </html>
