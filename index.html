@@ -3,12 +3,20 @@
 
 <head>
    <meta charset="UTF-8">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      .blurred-footer {
+         backdrop-filter: blur(10px);
+         -webkit-backdrop-filter: blur(10px);
+         mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+         -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+      }
+   </style>
    <title>heehaws</title>
 </head>
 
 <body bgcolor="#FFF4B7" style="font-size: xx-large; color: #006A67; font: 2em sans-serif;">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 
    <h1>hi</h1>
 
@@ -35,7 +43,7 @@
          </script>
       </select>
       <br>
-      <label for="quantity">Choose a number:</label>
+      <label for="quantity">Choose quantity:</label>
       <br>
       <input type="number" id="quantity" name="quantity" min="1" max="25" value=1>
       <input type="submit" value="Submit">
@@ -86,7 +94,8 @@
       });
    </script>
 
-   <footer style="font-style: italic; text-align: center; position: fixed; bottom: 0; width: 100%; font-size: large;">
+   <footer class="blurred-footer"
+      style="font-style: italic; text-align: center; position: fixed; bottom: 0; width: 100%; font-size: large;">
       <p>by tg</p>
    </footer>
 </body>
