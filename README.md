@@ -1,2 +1,5 @@
 read me
-https://painlypink.github.io/laughing-guide/
+
+[open url](https://painlypink.github.io/laughing-guide/)
+
+goodbye
