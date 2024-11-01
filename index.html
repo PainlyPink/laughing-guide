@@ -86,10 +86,25 @@
                 feedback.hidden = false;
             }
         });
+
+        // Fetch the deployment time from deploy-date.json and display it
+        fetch('/deploy-date.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('deployment-time').textContent = data.last_deployed;
+            })
+            .catch(error => {
+                document.getElementById('deployment-time').textContent = "Failed to load deployment time.";
+                console.error("Error fetching deployment date:", error);
+            });
     </script>
 
     <footer style="font-style: italic; text-align: center; position: fixed; bottom: 0; width: 100%; font-size: large;">
         <p>by tg</p>
+    </footer>
+    <footer id="deployment-time"
+        style="font-style: italic; text-align: right; position: fixed; bottom: 0; padding-bottom: 3px; font-size: small;">
+        <p>loading deployment time</p>
     </footer>
 </body>
 
