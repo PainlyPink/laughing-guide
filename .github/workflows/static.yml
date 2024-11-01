@@ -30,7 +30,7 @@ jobs:
 
       - name: Create Last Updated File
         run: |
-          TZ='Asia/Kolkata' date +"{"\"last_deployed\"": \""%a %b %d %T IST %Y\""}" > deploy-date.json
+          TZ='Asia/Kolkata' echo "{\"last_deployed\": \"$(date '+%a %b %d %T IST %Y')\"}" > deploy-date.json
 
 
       - name: Upload artifact
