@@ -30,8 +30,8 @@ jobs:
 
       - name: Create Last Updated File
         run: |
-          TZ='Asia/Kolkata' echo "{\"last_deployed\": \"$(date '+%a %b %d %T IST %Y')\"}" > deploy-date.json
-
+          mkdir -p public
+          TZ='Asia/Kolkata' echo "{\"last_deployed\": \"$(date '+%a %b %d %T IST %Y')\"}" > public/deploy-date.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
