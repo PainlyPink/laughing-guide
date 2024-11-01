@@ -3,14 +3,15 @@
 
 <head>
    <meta charset="UTF-8">
+   <!-- Underscore.js for shuffling -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <style>
-      .blurred-footer {
-         backdrop-filter: blur(10px);
-         -webkit-backdrop-filter: blur(10px);
-         mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-         -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+      .footer-content {
+         /* contrast color to background */
+         mix-blend-mode: difference;
+         /* glow-like */
+         text-shadow: rgb(0, 255, 157) 1px 0 10px;
       }
    </style>
    <title>heehaws</title>
@@ -20,10 +21,13 @@
 
    <h1>hi</h1>
 
+   <!-- form for selecting type and quantity -->
    <form>
       <label for="types">Choose joke type:</label>
       <br>
+      <!-- dropdown menu for types -->
       <select id="types" name="types">
+         <!-- load types from types.json -->
          <script>
             fetch('types.json')
                .then(response => response.json())
@@ -45,14 +49,18 @@
       <br>
       <label for="quantity">Choose quantity:</label>
       <br>
+      <!-- input for number of jokes -->
       <input type="number" id="quantity" name="quantity" min="1" max="25" value=1>
       <input type="submit" value="Submit">
-      <hr style="border-color: #006A67;">
    </form>
+   <hr style="border-color: #006A67;">
 
+   <!-- Joke placeholder -->
    <p id="joke">joke</p>
+   <!-- Contribute msg when jokes limited -->
    <p style="font-size: 40%;" id="contribute"></p>
 
+   <!-- Form submit handler -->
    <script>
       const form = document.querySelector('form');
 
@@ -94,7 +102,7 @@
       });
    </script>
 
-   <footer class="blurred-footer"
+   <footer class="footer-content"
       style="font-style: italic; text-align: center; position: fixed; bottom: 0; width: 100%; font-size: large;">
       <p>by tg</p>
    </footer>
