@@ -28,10 +28,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Create Last Updated File
+      - name: Update Last Updated File
         run: |
-          mkdir -p public
-          TZ='Asia/Kolkata' echo "{\"last_deployed\": \"$(date '+%a %b %d %T IST %Y')\"}" > public/deploy-date.json
+          TZ='Asia/Kolkata' echo "{\"last_deployed\": \"$(date '+%a %b %d %T IST %Y')\"}" > deploy-date.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
